@@ -1,0 +1,31 @@
+<main class="container">
+  <div class="row text-center justify-content-center">
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header">
+          もらったリプライ
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= @text %></p>
+        </div>
+      </div>
+      <p></p>
+      <p>に対するAIのリプ返は…</p>
+      <p></p>
+      <div class="card text-center">
+        <div class="card-header">
+          AIが自動生成したリプ返
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%= @reply %></h4>
+          <p class="card-text">#リプ返つらい</p>
+        </div>
+      </div>
+      <p></p>
+      <div>
+        <%= link_to 'AIのリプ返をTwitterで投稿する', "https://twitter.com/intent/tweet?screen_name=#{@authorname}&text=#{@reply}&hashtags=リプ返つらい", class: 'btn btn-primary' %>
+      </div>
+      <%= link_to 'リプライ一覧に戻る', "/twitter/show?userid=#{@userid}" %>
+    </div>
+  </div>
+</main>
