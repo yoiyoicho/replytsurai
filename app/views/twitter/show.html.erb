@@ -29,7 +29,7 @@
               </td>
               <td><%= @result['data'][i]['text'] %></td>
               <td>
-                <%= link_to 'リプ返を自動生成', "/yahoo/show/?userid=#{@userid}&authorname=#{authorname_screen}", class: 'btn btn-primary' %>
+                <%= link_to 'リプ返を自動生成', "/yahoo/show/?userid=#{@userid}&authorname=#{authorname_screen}&text=#{@result['data'][i]['text']}", class: 'btn btn-primary' %>
               </td>
             </tr>
           <% end %>
