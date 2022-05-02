@@ -60,7 +60,6 @@ class TwitterController < ApplicationController
     }
     request = Typhoeus::Request.new(url, options)
     response = request.run
-    byebug
     if response.code == 200
       JSON.parse(response.body)
     else
