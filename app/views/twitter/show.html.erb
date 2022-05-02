@@ -16,10 +16,18 @@
           <% @result['data'].length.times do |i| %>
             <tr>
               <th scope="row"><%= i + 1 %></th>
-              <td><%= @result['includes']['users'][i]['name'] %></td>
+              <td>
+                <% authorname = '' %>
+                <% @result['includes']['users'].length.times do |j| %>
+                  <% if @result['includes']['users'][j]['id'] == @result['data'][i]['author_id'] %>
+                    <% authorname = @result['includes']['users'][j]['name'] %>
+                  <% end %>
+                <% end %>
+                <%= authorname %>
+              </td>
               <td><%= @result['data'][i]['text'] %></td>
               <td>
-                <%= link_to 'リプ返を自動生成', "/yahoo/show/?userid=#{@userid}&authorname=#{@result['includes']['users'][i]['username']}&text=#{@result['data'][i]['text']}", class: 'btn btn-primary' %>
+                <%= link_to 'リプ返を自動生成', "/yahoo/show/?userid=#{@userid}&authorname=#{authorname}&text=#{@result['data'][i]['text']}", class: 'btn btn-primary' %>
               </td>
             </tr>
           <% end %>
