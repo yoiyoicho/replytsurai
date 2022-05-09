@@ -4,7 +4,9 @@
       <p>フォロワーから、見ず知らずの人から、</p>
       <p>日夜飛んでくるTwitterのリプライ</p>
       <p>「突然話しかけられても、なんて返事すればいいのかわからない！」</p>
+      <p>「忙しくて返事を考えている暇がない！」</p>
       <p>そんな人のために、AIがリプライへのリプライ（リプ返）を自動で生成します</p>
+      <p>自分宛のリプライも生成できます</p>
       <%= form_with url: '/twitter/search', method: :get, local: true do |f| %>
         <div class="form-group">
           <%= f.text_field :username, placeholder: 'TwitterIDを入力（例：yoiyoicho）', class: 'form-control' %>

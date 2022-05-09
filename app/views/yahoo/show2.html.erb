@@ -3,18 +3,18 @@
     <div class="col">
       <div class="card text-center">
         <div class="card-header">
-          もらったリプライ
+          あなたのツイート
         </div>
         <div class="card-body">
           <p class="card-text"><%= @text %></p>
         </div>
       </div>
       <p></p>
-      <p>に対するAIのリプ返は…</p>
+      <p>に対するAIのリプライは…</p>
       <p></p>
       <div class="card text-center">
         <div class="card-header">
-          AIが自動生成したリプ返
+          AIが自動生成したリプライ
         </div>
         <div class="card-body">
           <h4 class="card-title"><%= @reply %></h4>
@@ -23,10 +23,10 @@
       </div>
       <p></p>
       <div>
-        <% tweettext = "@#{@authorname}さんのツイート%0A「#{@text}」%0A%0AにAIがリプ返！%0A%0A「#{@reply}」%0A%0A" %>
-        <%= link_to 'AIのリプ返をTwitterで投稿する', "https://twitter.com/intent/tweet?text=#{tweettext}&hashtags=リプ返つらい&url=https://replytsurai.onrender.com/", class: 'btn btn-primary' %>
+        <% tweettext = "@#{@authorname}さんのツイート%0A「#{@text}」%0A%0AにAIがリプライ！%0A%0A「#{@reply}」%0A%0A" %>
+        <%= link_to 'AIのリプライをTwitterで投稿する', "https://twitter.com/intent/tweet?text=#{tweettext}&hashtags=リプ返つらい&url=https://replytsurai.onrender.com/", class: 'btn btn-secondary' %>
       </div>
-      <%= link_to 'リプライ一覧に戻る', "/twitter/show?userid=#{@userid}" %>
+      <%= link_to 'ツイート一覧に戻る', "/twitter/show2?userid=#{@userid}" %>
     </div>
   </div>
 </main>

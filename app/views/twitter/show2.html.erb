@@ -1,14 +1,14 @@
 <main class="container">
   <div class="row text-center justify-content-center">
     <div class="col">
-      <h1 class="text-primary">リプライ一覧</h1>
-      <p>取得したリプライは<%= @result['data'].length %>つです（最大5つ）</p>
+      <h1 class="text-secondary">ツイート一覧</h1>
+      <p>取得したツイートは<%= @result['data'].length %>つです（最大5つ）</p>
       <table class="table">
         <thead>
           <tr>
             <th scope="col" style="width: 10%">#</th>
-            <th scope="col" style="width: 20%">リプライ主</th>
-            <th scope="col" style="width: 40%">リプライの内容</th>
+            <th scope="col" style="width: 20%">ツイート主</th>
+            <th scope="col" style="width: 40%">ツイートの内容</th>
             <th scope="col" style="width: 20%"></th>
           </tr>
         </thead>
@@ -29,13 +29,13 @@
               </td>
               <td><%= @result['data'][i]['text'] %></td>
               <td>
-                <%= link_to 'リプ返を自動生成', "/yahoo/show/?userid=#{@userid}&authorname=#{authorname_screen}&text=#{@result['data'][i]['text']}", class: 'btn btn-primary' %>
+                <%= link_to 'リプライを自動生成', "/yahoo/show2/?userid=#{@userid}&authorname=#{authorname_screen}&text=#{@result['data'][i]['text']}", class: 'btn btn-secondary' %>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <%= link_to 'ツイート一覧も見る', "/twitter/show2/?userid=#{@userid}", class: 'btn btn-secondary' %>
+      <%= link_to 'リプライ一覧も見る', "/twitter/show/?userid=#{@userid}", class: 'btn btn-primary' %>
     </div>
   </div>
 </main>

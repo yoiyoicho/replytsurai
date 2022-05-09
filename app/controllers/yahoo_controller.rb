@@ -9,6 +9,13 @@ class YahooController < ApplicationController
     @reply = get_reply(@text)
   end
 
+  def show2
+    @userid = params[:userid]
+    @authorname = params[:authorname]
+    @text = params[:text]
+    @reply = get_reply(@text)
+  end
+
   private
 
   def get_reply(text)
