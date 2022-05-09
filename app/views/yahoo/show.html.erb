@@ -23,8 +23,8 @@
       </div>
       <p></p>
       <div>
-        <% tweettext = "@#{@authorname}さんのツイート「#{@text}」にAIがリプ返！「#{@reply}」 #リプ返つらい https://replytsurai.onrender.com/" %>
-        <%= link_to 'AIのリプ返をTwitterで投稿する', "https://twitter.com/intent/tweet?text=#{tweettext}", class: 'btn btn-primary' %>
+        <% tweettext = "@#{@authorname}さんのツイート「#{@text}」にAIがリプ返！「#{@reply}」" %>
+        <%= link_to 'AIのリプ返をTwitterで投稿する', "https://twitter.com/intent/tweet?text=#{tweettext}&hashtags=リプ返つらい&url=https://replytsurai.onrender.com/", class: 'btn btn-primary' %>
       </div>
       <%= link_to 'リプライ一覧に戻る', "/twitter/show?userid=#{@userid}" %>
     </div>
